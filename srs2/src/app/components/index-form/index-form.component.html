@@ -1,0 +1,26 @@
+<div class="justify-content-center">
+    <h1>Buscar Servicio</h1>
+    <form>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label class="sr-only" for="inlineFormInput">Nombre del Servicio</label>
+                <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="...">
+            </div>
+            <div class="col-auto">
+                <label class="sr-only" for="inlineFormInput">Tipo de Servicio</label>
+                <select class="form-select" aria-label="Default select example" 
+                        name="service_type" id="service_type" selected>
+                        <option value="1" >FoodTruck</option>
+                        <option value="2">Cathering</option>
+                        <option value="3">Mudanza</option>
+                        <option value="4">Muñecos Inflables</option>
+                        <option value="5">Canto</option>
+                    </select>
+            </div>
+            <br>
+            <div class="col-auto">
+                <button type="submit" (click)="services_search()" class="btn btn-primary mb-2">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>

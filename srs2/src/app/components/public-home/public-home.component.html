@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>S.R.S</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p><a>{{ this.userService.firstname }}</a><br><a>{{ this.userService.surname }}</a></p>
+
+            <li>
+                <a routerLink="my_services" >Mis Servicios</a>
+            </li>
+            <li>
+                <a routerLink="add_services" >Cargar Servicios</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <button routerLink="/home" type="submit" class="btn btn-primary">Home</button>
+                </div>
+
+                <div class="ml-auto">
+
+                    
+                        <div ngbDropdown class="d-inline-block">
+                            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Mi cuenta</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button routerLink="/home/user_edit" ngbDropdownItem>Editar Perfil</button>
+                                <button routerLink="" ngbDropdownItem>Cerrar Sesión</button>
+                            </div>
+                        </div>
+                
+                </div>
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,56 @@
+<div class="col-md-6">
+    <div class="justify-content-center text-center">
+        <h2>Editar Servicio</h2>
+        <form class="form-inline justify-content-center">
+            <div class="form-row form-inline justify-content-center">
+                <div class="form-group  form-inline justify-content-center">
+                    <label for="inputEmail4">Nombre del Servicio <small style="color:red">*</small></label>
+                    <input type="text" class="form-control" [(ngModel)]="service.nombre" name="service_name"
+                    id="service_name" required>
+
+                        <div class="form-group form-inline justify-content-center">
+                            <label for="inputEmail4">Tipo de Servicio</label>
+                            <select class="form-select" aria-label="Default select example" [(ngModel)]="service.tipoServicio.id" name="service_type"
+                            id="service_type">
+                                <option value="1" >FoodTruck</option>
+                                <option value="2">Cathering</option>
+                                <option value="3">Mudanza</option>
+                                <option value="4">Muñecos Inflables</option>
+                                <option value="5">Canto</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="form-group  form-inline justify-content-center">
+                    <label for="inputEmail4">Descripcion </label>
+                    <input type="email" class="form-control" [(ngModel)]="service.descripcion" name="description"
+                        id="description" required>
+                </div>
+
+                <div class="form-group  form-inline justify-content-center">
+                    <label for="inputEmail4">Whatsapp </label>
+                    <input class="form-control" placeholder="Numero de Whatsapp"  [(ngModel)]="service.redesSociales[1].urlWeb" name="whatsapp" id="whatsapp" >
+                </div>
+                <div class="form-group  form-inline justify-content-center">
+                    <label for="inputEmail4">Instagram</label>
+                    <input class="form-control" placeholder="Ingrese URL de Instagram"  [(ngModel)]="service.redesSociales[0].urlWeb" name="instagram" id="instagram">
+                </div>
+                <div class="form-group  form-inline justify-content-center">
+                    <label for="inputEmail4">Twitter</label>
+                    <input class="form-control" placeholder="Ingrese URL de Twitter" [(ngModel)]="service.redesSociales[2].urlWeb" name="twitter" id="twitter" >
+                </div>
+
+               <!-- <div class="form-group form-inline justify-content-center">
+                    <label for="inputPassword4">Fotos</label>
+                    <input #foto class="form-control" #img accept="image/*" (change)="onFileChange($event)" required name="images[]" id="images[]"
+                        multiple type="file" required>
+                </div>-->
+            </div>
+            <br>
+            <button type="submit" (click)="service_update()" class="btn btn-primary">Actualizar Servicio</button>
+            <br>
+            <br>
+
+        </form>
+    </div>
+
+</div>

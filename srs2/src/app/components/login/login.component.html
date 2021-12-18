@@ -1,0 +1,33 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+
+
+    <div class="fadeIn first">
+      <img src="../../assets/images/trade.png" id="icon" alt="User Icon" />
+    </div>
+
+
+    <form>
+      <h4>¡Bienvenido!</h4>
+      <input type="text" name="email" class="fadeIn third" [(ngModel)]="email" placeholder="Email" required />
+      <input class="fadeIn third" autoComplete="current-password" [(ngModel)]="password" placeholder="Contraseña"
+        type="text" name="password" required />
+
+      <input  type="submit" (click)="login()" class="fadeIn fourth" value="Iniciar Sesión">
+      
+    </form>
+    <div class="row"><span  name="error">{{ error }}   </span></div>
+
+
+    <div id="formFooter">
+      <a routerLink="/register" class="underlineHover">¿No tiene cuenta? ¡Registrese!</a>
+    </div>
+
+  </div>
+</div>

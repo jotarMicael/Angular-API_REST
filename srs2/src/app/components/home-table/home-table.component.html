@@ -1,0 +1,59 @@
+<div *ngIf="!error; else not_services">
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre del Servicio</th>
+        <th scope="col">Organizador</th>
+        <th scope="col">Tipo de Servicio</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of services;let indice=index">
+        <th scope="row">{{ indice+1 }}</th>
+        <td><a href='javascript:void(0);' (click)="openBackDropCustomClass(content)">{{ item.nombre }} </a></td>
+        <td>{{ item.usuario.nombre }}</td>
+        <td>{{ item.tipoServicio.nombre }}</td>
+        <td><a (click)="delete(item.id)" href='javascript:void(0);'><i class="fas fa-trash"></i></a>&nbsp;&nbsp;
+          <a (click)="update(item.id)" routerLink="/home/edit_service/{{item.id}}" ><i class="fas fa-edit"></i></a>
+        </td>
+
+        <ng-template #content let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Nombre del Servicio: {{ item.nombre }}</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Imagenes</h4>
+            <div class="row" *ngFor="let img of item.imagenes">
+              <img src="assets/images/{{ img.ruta }}" width="300px" height="150px">
+            </div>
+            <div class="row"><label> <strong>Calificaciones:</strong>&nbsp; <ngb-rating [readonly]="true" [rate]="3"
+                  [max]="5"></ngb-rating></label></div>
+            <div class="row"><label><strong> Tipo de Servicio:</strong>&nbsp; {{ item.tipoServicio.nombre }}</label>
+            </div>
+            <label><strong>Redes Sociales:</strong> </label>&nbsp;
+            <div class="row" *ngFor="let rs of item.redesSociales"><label><strong> <a href="#"><i
+                      class="{{ rs.icono }}"></i>&nbsp;{{ rs.urlWeb }}</a></strong></label></div>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Cerrar</button>
+          </div>
+        </ng-template>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+
+</div>
+<ng-template #not_services>
+
+  <div>
+    No posee servicios activos
+  </div>
+</ng-template>
